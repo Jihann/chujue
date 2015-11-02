@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/libs/bootstrap/dist/css/bootstrap.min.css" type="text/css" />
+    <script type="text/javascript" src="libs/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript">
+        jQuery(function() {
+           jQuery("input[type=button]").on('click', function() {
+               var $signinName = jQuery("#signinName").val();
+               var $signinPwd = jQuery("#signinPwd").val();
+               var $signinPwd_re = jQuery("#signinPwd-re").val();
+               if (!$signinName) {
+                   alert('用户名不能为空！');
+                   return false;
+               } else if (!$signinPwd) {
+                   alert('密码不能为空！');
+                   return false;
+               } else if (!$signinPwd_re) {
+                   alert('确认密码不能为空！');
+                   return false;
+               } else if ($signinPwd !== $signinPwd_re) {
+                   alert('两次输入的密码不一致，请核对后再输入！');
+                   return false;
+               } else {
+                   var url = '/user/signup';
+                   jQuery('form').attr('action', url);
+                   jQuery('form').submit();
+               }
+           });
+        });
+    </script>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-5">
+            <form method="POST" action="">
+               <div class="modal-body">
+                   <div class="form-group">
+                       <label for="signinName">用户名</label>
+                       <input type="text" id="signinName" name="user[username]" class="form-control">
+                   </div>
+                   <div class="form-group">
+                       <label for="signinPwd">密码</label>
+                       <input type="password" id="signinPwd" name="user[password]" class="form-control">
+                   </div>
+                   <div class="form-group">
+                       <label for="signinPwd-re">确认密码</label>
+                       <input type="password" id="signinPwd-re" class="form-control">
+                   </div>
+               </div>
+               <div class="modal-footer">
+                    <input type="button" class="btn btn-success" value="注册">
+               </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

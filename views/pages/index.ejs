@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+  <head lang="en">
+    <meta charset="UTF-8">
+    <title>初觉</title>
+    <!-- 常规css reset -->
+    <link rel="stylesheet" type="text/css" href="stylesheets/reset.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/main.css">
+    <script type="text/javascript" src="libs/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="javascripts/music-list.js"></script>
+    <script type="text/javascript" src="javascripts/music.js"></script>
+    <script type="text/javascript">
+      jQuery(function() {
+        new MusicPlayer();
+      });
+    </script>
+  </head>
+  <body>
+    <div class="main-wrapper">
+      <!-- 页头start -->
+      <header>
+        <nav>
+          <div class="logo"><a href="#">初觉</a></div>
+          <ul>
+            <li><a href="#" class="active">首页</a></li>
+            <li><a href="#">登录</a></li>
+            <li><a href="#">注册</a></li>
+            <li><a href="#">菜单</a></li>
+            <li><a href="#">订阅</a></li>
+          </ul>
+        </nav>
+        <div class="music-wrapper">
+          <div class="music-info">
+            <div class="star-img">
+              <img src="images/music/star/su7.png" alt="">
+            </div>
+            <div class="star-info">
+              小美女
+            </div>
+          </div>
+          <div class="music-doing">
+            <span class="music-do">正在播放</span>
+            <span class="music-name">See You Again</span>
+          </div>
+          <div class="music-time">
+            <span class="time-cur">00:00</span>
+            <span class="time-sum">00:00</span>
+
+          </div>
+          <div class="progress-bar">
+            <div class="progress"></div>
+          </div>
+          <audio src="media/See%20You%20Again.mp3">
+            <p>你的浏览器不支持HTML5</p>
+          </audio>
+          <div class="music-button">
+            <div class="btn-prev"><</div>
+            <div class="btn-play play">+</div>
+            <div class="btn-next">></div>
+          </div>
+          <div class="music-volume">
+            <div class="volume"></div>
+          </div>
+          <div class="music-footer">
+            <ul>
+              <li class="icon-ama" title="点赞"></li>
+              <li class="icon-ran" title="随机"></li>
+              <li class="icon-sin" title="单曲"></li>
+            </ul>
+            <div class="icon-list"></div>
+          </div>
+        </div>
+        <div id="banner">
+          <div class="inner">
+            <h1>初觉</h1>
+            <p class="sub-heading">分享个人感动的故事</p>
+            <button>了解我</button>
+            <div class="more">
+              更多
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- 页头end -->
+      <!-- 内容start -->
+      <div class="content">
+        <section class="green-section">
+          <div class="wrapper">
+            <div>
+              <h2>关于初觉</h2>
+              <div class="hr"></div>
+              <p class="sub-heading">初觉这个名字，也是最近两天才想起来，
+                更多的是个人的文字情节吧</p>
+            </div>
+            <div class="icon-group">
+              <span class="icon">支持</span>
+              <span class="icon">吐槽</span>
+              <span class="icon">点赞</span>
+            </div>
+          </div>
+        </section>
+        <section class="gray-section">
+          <div class="article-preview">
+            <div class="image-section">
+              <img src="images/c1.jpg" alt="">
+            </div>
+            <div class="text-section">
+              <h2>它说她失宠</h2>
+              <div class="sub-heading">夜未眠</div>
+              <p>流水如年，岁月如歌，他和她在同一个城市相遇，却彼此变得那么陌生</p>
+            </div>
+          </div>
+          <div class="article-preview">
+            <div class="text-section">
+              <h2>一座城池</h2>
+              <div class="sub-heading">落寞</div>
+              <p>雨未停，人却走，这座城市的灯火，神秘而又破落</p>
+            </div>
+            <div class="image-section">
+              <img src="images/c2.jpg" alt="">
+            </div>
+          </div>
+          <div class="article-preview">
+            <div class="image-section">
+              <img src="images/c3.jpg" alt="">
+            </div>
+            <div class="text-section">
+              <h2>等秋来</h2>
+              <div class="sub-heading">年末</div>
+              <p>最终我们会在一个地方相遇，那时，你还会如初，依旧吟唱那首喜欢的歌</p>
+            </div>
+          </div>
+        </section>
+        <section class="purple-section">
+          <div class="wrapper">
+            <div class="heading-wrapper">
+              <h2>美文浏览</h2>
+              <div class="hr"></div>
+              <div class="sub-heading">
+                这一刻就我想静静，那么，你了？
+              </div>
+            </div>
+            <div class="card-group">
+              <div class="card">
+                <h3>友情</h3>
+                <p>那些年我们一起追过的女孩</p>
+              </div>
+              <div class="card">
+                <h3>爱情</h3>
+                <p>何以笙箫默</p>
+              </div>
+              <div class="card">
+                <h3>文艺</h3>
+                <p>花钱一杯酒</p>
+              </div>
+              <div class="card">
+                <h3>犯二</h3>
+                <p>犯二的小朋友们，你们在哪
+                </p>
+              </div>
+              <div class="card">
+                <h3>产品</h3>
+                <p>追求中</p>
+              </div>
+              <div class="card">
+                <h3>蓝天</h3>
+                <p>大海与白云</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <!-- 内容end -->
+      <!-- 页脚start -->
+      <footer>
+        <ul class="share-group">
+          <li>新浪</li>
+          <li>空间</li>
+          <li>微信</li>
+          <li>陌陌</li>
+          <li>GTIHUB</li>
+        </ul>
+        <div class="copy">
+          &copy 初觉 - 2050
+        </div>
+      </footer>
+      <!-- 页脚end -->
+    </div>
+  </body>
+</html>
