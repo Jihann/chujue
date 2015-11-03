@@ -141,31 +141,12 @@
               </div>
             </div>
             <div class="card-group">
+              <% posts.forEach(function(post, index) { %>
               <div class="card">
-                <h3>友情</h3>
-                <p>那些年我们一起追过的女孩</p>
+                <h3><%= post.title %></h3>
+                <p><%= post.content %></p>
               </div>
-              <div class="card">
-                <h3>爱情</h3>
-                <p>何以笙箫默</p>
-              </div>
-              <div class="card">
-                <h3>文艺</h3>
-                <p>花钱一杯酒</p>
-              </div>
-              <div class="card">
-                <h3>犯二</h3>
-                <p>犯二的小朋友们，你们在哪
-                </p>
-              </div>
-              <div class="card">
-                <h3>产品</h3>
-                <p>追求中</p>
-              </div>
-              <div class="card">
-                <h3>蓝天</h3>
-                <p>大海与白云</p>
-              </div>
+              <% }) %>
             </div>
           </div>
         </section>

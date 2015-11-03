@@ -8,20 +8,24 @@
     <script type="text/javascript">
         jQuery(function() {
            jQuery("input[type=button]").on('click', function() {
-               var $signinName = jQuery("#signinName").val();
-               var $signinPwd = jQuery("#signinPwd").val();
-               var $signinPwd_re = jQuery("#signinPwd-re").val();
-               if (!$signinName) {
-                   alert('用户名不能为空！');
+               var $signupEmail = jQuery("#signupEmail").val();
+               var $signupPwd = jQuery("#signupPwd").val();
+               var $signupPwdre = jQuery("#signupPwd-re").val();
+               var $signupNickName = jQuery("#signupNickName").val();
+               if (!$signupEmail) {
+                   alert('邮箱不能为空！');
                    return false;
-               } else if (!$signinPwd) {
+               } else if (!$signupPwd) {
                    alert('密码不能为空！');
                    return false;
-               } else if (!$signinPwd_re) {
+               } else if (!$signupPwdre) {
                    alert('确认密码不能为空！');
                    return false;
-               } else if ($signinPwd !== $signinPwd_re) {
+               } else if ($signupPwd !== $signupPwdre) {
                    alert('两次输入的密码不一致，请核对后再输入！');
+                   return false;
+               } else if (!$signupNickName) {
+                   alert("昵称不能为空！");
                    return false;
                } else {
                    var url = '/user/signup';
@@ -39,16 +43,20 @@
             <form method="POST" action="">
                <div class="modal-body">
                    <div class="form-group">
-                       <label for="signinName">用户名</label>
-                       <input type="text" id="signinName" name="user[username]" class="form-control">
+                       <label for="signupEmail">邮箱</label>
+                       <input type="text" id="signupEmail" name="user[email]" class="form-control">
                    </div>
                    <div class="form-group">
-                       <label for="signinPwd">密码</label>
-                       <input type="password" id="signinPwd" name="user[password]" class="form-control">
+                       <label for="signupPwd">密码</label>
+                       <input type="password" id="signupPwd" name="user[password]" class="form-control">
                    </div>
                    <div class="form-group">
-                       <label for="signinPwd-re">确认密码</label>
-                       <input type="password" id="signinPwd-re" class="form-control">
+                       <label for="signupPwd-re">确认密码</label>
+                       <input type="password" id="signupPwd-re" class="form-control">
+                   </div>
+                   <div class="from-group">
+                       <label form="signupNickName">昵称</label>
+                       <input type="text" id="signupNickName" name="user[nickname]" class="form-control">
                    </div>
                </div>
                <div class="modal-footer">

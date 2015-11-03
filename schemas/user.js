@@ -5,10 +5,15 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var UserSchema = new Schema({
+    header : {
+        type : String,
+        default : ''
+    },
     username : {
         unique : true,
         type : String
     },
+    nickname : String,
     // 0: nomal user
     // 1: verified user
     // 2: professonal user
@@ -30,11 +35,18 @@ var UserSchema = new Schema({
         }
     },
     sex : {
-        type : String,
-        default : 'boy'
+        type : Number,
+        default : 0
     },
-    loginIP : String,
-    email : String
+    loginIP : {
+        type : String,
+        default : ''
+    },
+    email : String,
+    signature : {
+        type : String,
+        default : ''
+    }
 });
 
 UserSchema.pre('save', function(next) {
