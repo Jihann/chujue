@@ -25,7 +25,9 @@ mongoose.connect(setting.dbUrl);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views/pages'));
-app.set('view engine', 'ejs');
+// ejs to html
+app.engine('html', require('ejs').renderFile);
+app.set('view engine', 'html');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
