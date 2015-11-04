@@ -1,11 +1,13 @@
 var express = require('express');
 var router = express.Router();
+var Home = require('../controllers/home_controller');
 var Auth = require('../controllers/auth_controller');
 var User = require('../controllers/user_controller');
 var Post = require('../controllers/post_controller');
 
 // Index
 router.get('/', Post.list);
+router.get('/home', Home.index);
 
 // Post
 router.get('/post', Post.info);

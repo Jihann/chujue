@@ -4,10 +4,17 @@
 
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
+// 获取ObjectId
+var ObjectId = Schema.Types.ObjectId;
+
 var PostSchema = new Schema({
     title : String,
     poster : String,
     content : String,
+    user : {
+        type : ObjectId,
+        ref : 'User'
+    },
     pv : {
         type : Number,
         default : 0
