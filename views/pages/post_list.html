@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title><%= title %></title>
+</head>
+<body>
+<div>
+    <form method="post" name="" action="/user/mod">
+        <table align="center">
+            <tr>
+                <td>头像：</td>
+                <td>
+                    <% if (user.header) { %>
+                    <img src="/upload/<%= user.header %>" alt="avatar" width="150px" height="150px">
+                    <% } %>
+                    <input type="button" value="修改" onclick="javascript:window.location.href='/mod/head/<%= user._id %>'"/>
+                </td>
+            </tr>
+            <tr>
+                <td>登录邮箱：</td>
+                <td><%= user.email %></td>
+            </tr>
+            <tr>
+                <td>昵称：</td>
+                <td>
+                    <input type="text" name="nickname" value="<%= user.nickname %>">
+                    <input type="hidden" name="_id" value="<%= user._id %>" />
+                </td>
+            </tr>
+            <tr>
+                <td>性别：</td>
+                <td>
+                    <input type="radio" name="sex" value="0" <% if (user.sex === 0) { %> checked <% } %>/>男
+                    <input type="radio" name="sex" value="1" <% if (user.sex === 1) { %> checked <% } %>/>女
+                    <input type="radio" name="sex" value="2" <% if (user.sex === 2) { %> checked <% } %>/>保密
+                </td>
+            </tr>
+            <tr>
+                <td>签名档：</td>
+                <td>
+                    <textarea name="signature" rows="5" cols="30"><%= user.signature %></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="submit" value="修改" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+</body>
+</html>

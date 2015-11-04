@@ -42,7 +42,10 @@ var UserSchema = new Schema({
         type : String,
         default : ''
     },
-    email : String,
+    email : {
+        unique : true,
+        type : String
+    },
     signature : {
         type : String,
         default : ''

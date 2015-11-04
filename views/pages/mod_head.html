@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title><%= title %></title>
+</head>
+<body>
+<div>
+    <form method="post" action="/mod/head" enctype="multipart/form-data">
+        <table>
+            <tr>
+                <td>头像：</td>
+                <td>
+                    <input type="file" name="uploadHead"/>
+                    <input type="hidden" name="userId" value="<%= user._id %>"/>
+                </td>
+                <% if (user.header) { %>
+                <td>
+                    <img src="/upload/<%= user.header %>" alt="avatar">
+                </td>
+                <% } %>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <input type="submit" value="上传头像">
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+</body>
+</html>

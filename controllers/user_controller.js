@@ -122,7 +122,7 @@ exports.saveHead = function(req, res, next) {
                 if (err) {
                     console.log('---------- ' + err + '-----------');
                 }
-                req.poster = reHeadData; //讲重命名后的文件名称传到下一个请求中
+                req.poster = reHeadData; //将重命名后的文件名称传到下一个请求中
                 next();
             });
         });
@@ -186,6 +186,7 @@ exports.headMod = function(req, res, next) {
     var userId = req.body.userId;
     var newUser;
     if (req.poster) {
+        console.log('------------ poster ' + req.poster + '-----------');
         newUser = {
             header : req.poster
         };
@@ -197,6 +198,8 @@ exports.headMod = function(req, res, next) {
             }
             res.redirect('/user/mod');
         });
+    } else {
+        res.redirect('/user/mod');
     }
 };
 
