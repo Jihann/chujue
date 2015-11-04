@@ -5,11 +5,13 @@
 var Post = require('../models/post');
 
 exports.info = function(req, res, next) {
+    var currentUser = req.session.user;
     res.render('post_create', {
         title : '文章创建页',
         post : {
             title : '',
-            content : ''
+            content : '',
+            user : currentUser
         }
     });
 };
@@ -34,14 +36,17 @@ exports.create = function(req, res, next) {
     }
 };
 
+// 首页暂时显示6篇文章
 exports.list = function(req, res, next) {
-    Post.fetch(function(err, posts) {
-        if (err) {
-           console.log('-----------' + err + '------------');
-        }
-        res.render('index', {
-            title : '初觉',
-            posts : posts
+    Post.find({})
+        .limit(6)
+        .exec(function(err, posts) {
+            if (err) {
+                console.log('-----------' + err + '------------');
+            }
+            res.render('index', {
+                title : '初觉',
+                posts : posts
+            });
         });
-    });
 };
