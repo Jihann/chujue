@@ -70,7 +70,7 @@ exports.signup = function(req, res, next) {
             if (err) {
                 console.log('--------------' + err + '--------------');
             }
-            res.redirect('/');
+            res.redirect('/signin');
         })
     });
 };
@@ -93,7 +93,7 @@ exports.list = function(req, res, next) {
 //用户注销
 exports.logout = function(req, res, next) {
     delete req.session.user;
-    return res.redirect('/admin/user/list');
+    return res.redirect('/home');
 };
 
 

@@ -7,7 +7,7 @@ var Post = require('../models/post');
 exports.info = function(req, res, next) {
     var currentUser = req.session.user;
     res.render('post_create', {
-        title : '文章创建页',
+        title : '初觉 | 初语',
         post : {
             title : '',
             content : '',
@@ -31,7 +31,7 @@ exports.create = function(req, res, next) {
             if (err) {
                 console.log('---------------' + err + '------------------');
             }
-            res.redirect('/');
+            res.redirect('/home');
         });
     }
 };
