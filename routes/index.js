@@ -29,4 +29,8 @@ router.post('/user/mod', User.userMod);
 router.get('/mod/head/:id', User.headInfo);
 router.post('/mod/head', User.saveHead, User.headMod);
 
+// 根据用户id获取他当日发表的初觉
+router.get('/user/:id', Home.info);
+router.get('/detail/:id', Home.detail);
+
 module.exports = router;

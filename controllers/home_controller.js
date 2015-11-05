@@ -32,5 +32,47 @@ exports.index = function(req, res, next) {
                 posts : results
             });
         });
+};
 
+//
+exports.info = function(req, res, next) {
+    console.log('---------------- user article info ----------------');
+    var id = req.params.id;
+    if (id) {
+        Post.find({user: id})
+            .populate({
+                path : 'user'
+            })
+            .sort({'meta.updatedAt' : -1})
+            .exec(function(err, posts) {
+                if (err) {
+                    console.log('-----------------' + err + '--------------------');
+                }
+                res.render('article_list', {
+                    title : '初觉 - ME',
+                    posts : posts
+                });
+            });
+    }
+};
+
+
+exports.detail = function(req, res, next) {
+    console.log('--------------- user article detail info ----------------');
+    var id = req.params.id;
+    if (id) {
+        Post.findOne({_id : id})
+            .populate({
+                path : 'user'
+            })
+            .exec(function(err, post) {
+                if (err) {
+                    console.log('---------------' + err + '-----------------');
+                }
+                res.render('article_detail', {
+                    title : '初觉 - 感动',
+                    post : post
+                });
+            });
+    }
 };
