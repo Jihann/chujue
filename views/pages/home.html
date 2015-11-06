@@ -14,11 +14,11 @@
                 <% posts.forEach(function(post, index){ %>
                     <% if (post.user) { %>
                     <div class="col-md-2">
-                        <div class="thumbnail">
-                            <a href="/user/<%= post.user._id %>">
-                                <img src="/upload/<%= post.user.header %>" width="154px" height="154px" alt="<%= post.user.nickname %>">
-                            </a>
-                        </div>
+                            <div>
+                                <a href="/user/<%= post.user._id %>">
+                                    <img src="/upload/<%= post.user.header %>" width="154px" height="154px" alt="<%= post.user.nickname %>">
+                                </a>
+                            </div>
                     </div>
                     <% } %>
                 <% }) %>
