@@ -76,3 +76,53 @@ exports.detail = function(req, res, next) {
             });
     }
 };
+
+/////////////////////////////////////////////////
+
+//js 这玩意出现问题首先看报啥错，然后追踪，例如先看浏览器控制台报错信息
+exports.index1 = function(req, res, next) {
+    res.render('mgr/index_v1');
+};
+
+exports.index2 = function(req, res, next) {
+    res.render('mgr/index_v2');
+};
+
+
+exports.index3 = function(req, res, next) {
+    res.render('mgr/index_v3');
+};
+
+exports.biao = function(req, res, next) {
+    res.render('mgr/form_builder');
+};
+
+exports.biao1 = function(req, res, next) {
+    res.render('mgr/table_basic');
+};
+
+exports.biao2 = function(req, res, next) {
+    res.render('mgr/table_data_tables');
+};
+
+exports.biao3 = function(req, res, next) {
+    res.render('mgr/table_foo_table');
+};
+
+///////////////////xiangce
+exports.xiang1 = function(req, res, next) {
+    res.render('mgr/basic_gallery');
+};
+
+exports.xiang2 = function(req, res, next) {
+    res.render('mgr/carousel');
+};
+
+exports.xiang3 = function(req, res, next) {
+    res.render('mgr/layerphotos');
+};
+
+
+exports.xiang4 = function(req, res, next) {
+    res.render('mgr/blueimp');
+};

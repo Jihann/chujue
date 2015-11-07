@@ -45,7 +45,7 @@ exports.signin = function(req, res, next) {
             req.session.user = user; //保持当前会话状态
             //判断登录用户权限 role >=50 super admin
             if (user.role && user.role >= 50) {
-                return res.redirect('/admin/user/list');
+                return res.redirect('/admin');
             }
             return res.redirect('/');
         }
@@ -161,7 +161,7 @@ exports.userMod = function(req, res, next) {
             if (err) {
                 console.log('----------------' + err + '------------------');
             }
-            res.redirect('/user/mod');
+            res.redirect('/home');
         });
     }
 };
