@@ -55,6 +55,7 @@ exports.signin = function(req, res, next) {
 //用户注册
 exports.signup = function(req, res, next) {
     var _user = req.body.user;
+    var tag = req.body.tag; //获取前台和后台登录标记
     User.findOne({email : _user.username}, function(err, user) {//判断用户是否存在
         console.log(user);
         if (err) {
@@ -66,11 +67,18 @@ exports.signup = function(req, res, next) {
         }
         var user = new User(_user);
         user.username = _user.email;
+        if (tag) {
+            user.role = 51;
+        }
         user.save(function(err, user) { //save
             if (err) {
                 console.log('--------------' + err + '--------------');
             }
-            res.redirect('/signin');
+            if (tag) {
+                res.redirect('/admin/login');
+            } else {
+                res.redirect('/signin');
+            }
         })
     });
 };

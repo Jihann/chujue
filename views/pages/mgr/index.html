@@ -27,7 +27,11 @@
                     <li class="nav-header">
                         <div class="dropdown profile-element">
                             <span>
+                                <% if (locals.user && user.header) { %>
                                 <img alt="image" class="img-circle" src="upload/<%= locals.user && user.header%>" width="64px" height="64px"/>
+                                <% } else { %>
+                                 <img alt="image" class="img-circle" src="/img/profile_small.jpg" width="64px" height="64px"/>
+                                <% } %>
                             </span>
                             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                                 <span class="clear">
@@ -45,7 +49,7 @@
                                 <li><a class="J_menuItem" href="mailbox.html">信箱</a>
                                 </li>
                                 <li class="divider"></li>
-                                <li><a href="login.html">安全退出</a>
+                                <li><a href="/lockscreen">锁定</a>
                                 </li>
                             </ul>
                         </div>
@@ -480,7 +484,7 @@
                         </li>
                     </ul>
                 </button>
-                <a href="login.html" class="roll-nav roll-right J_tabExit"><i class="fa fa fa-sign-out"></i> 退出</a>
+                <a href="/admin/login" class="roll-nav roll-right J_tabExit"><i class="fa fa fa-sign-out"></i> 退出</a>
             </div>
             <!-- 链接首页 -->
             <div class="row J_mainContent" id="content-main">

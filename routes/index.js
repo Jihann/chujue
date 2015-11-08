@@ -34,20 +34,26 @@ router.post('/mod/head', User.saveHead, User.headMod);
 router.get('/user/:id', Home.info);
 router.get('/detail/:id', Home.detail);
 
-/////////////////////////////////////////
-router.get('/admin', admin.index);
+// admin
+router.get('/admin', Auth.adminRequired, admin.index);
 router.get('/index1', Home.index1);
 router.get('/index2', Home.index2);
 router.get('/index3', Home.index3);
+router.get('/admin/login', admin.login);
+router.get('/admin/register', admin.register);
+
+// 锁定
+router.get('/lockscreen', admin.lockscreen);
+router.post('/lockscreen', admin.loginAgain);
 
 
-
-///表单构建器
+// 表单构建器
 router.get('/biao', Home.biao);
 router.get('/biao1', Home.biao1);
 router.get('/biao2', Home.biao2);
 router.get('/biao3', Home.biao3);
 
+// photo
 router.get('/xiang1', Home.xiang1);
 router.get('/xiang2', Home.xiang2);
 router.get('/xiang3', Home.xiang3);
