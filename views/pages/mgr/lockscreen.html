@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit">
+    <title>登录超时</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/animate.min.css" rel="stylesheet">
+    <link href="css/style.min.css" rel="stylesheet">
+</head>
+<body class="gray-bg">
+    <div class="lock-word animated fadeInDown">
+    </div>
+    <div class="middle-box text-center lockscreen animated fadeInDown">
+        <div>
+            <div class="m-b-md">
+                <img alt="image" class="img-circle circle-border" src="/img/a1.jpg">
+            </div>
+            <h3>Beaut-zihan</h3>
+            <p>您需要再次输入密码</p>
+            <form class="m-t" role="form" action="/lockscreen" method="post">
+                <div class="form-group">
+                    <input type="password" name="password" class="form-control" placeholder="******" required="">
+                </div>
+                <button type="submit" class="btn btn-primary block full-width">登录</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- 全局js -->
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!--统计代码，可删除-->
+</body>
+</html>
