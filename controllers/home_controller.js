@@ -122,7 +122,6 @@ exports.xiang3 = function(req, res, next) {
     res.render('mgr/layerphotos');
 };
 
-
 exports.xiang4 = function(req, res, next) {
     res.render('mgr/blueimp');
 };
