@@ -13,6 +13,8 @@ var MongoStore = require('connect-mongo')(session);
 var mongoose = require('mongoose');
 //导入配置项
 var setting = require('./config/setting');
+//node 上传第三方中间件
+var multer = require('multer'); //版本问题，装0.1.8
 
 //导入路由
 var routes = require('./routes/index');
@@ -45,8 +47,18 @@ app.use(session({
     collection: 'sessions'
   })
 }));
+//设置loginUser
+app.use(function(req, res, next) {
+  res.locals.user = req.session ? req.session.user : '';
+  next();
+});
+
 //静态资源例如js，css统一从public文件下查找
 app.use(express.static(path.join(__dirname, 'public')));
+//设置格式化时间
+app.locals.moment = require('moment');
+//上传
+app.use(multer());
 
 app.use('/', routes);
 app.use('/users', users);
@@ -81,6 +93,5 @@ app.use(function(err, req, res, next) {
     error: {}
   });
 });
-
 
 module.exports = app;
