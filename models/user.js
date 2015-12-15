@@ -1,5 +1,6 @@
 /**
  * Created by Jihann on 2015/11/1.
+ * 用户模型
  */
 //用mongoose生成model
 var mongoose = require('mongoose');
