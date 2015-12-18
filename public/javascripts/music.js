@@ -115,7 +115,7 @@
                 var currTime = _this.musicAudio.currentTime;
                 var scale = currTime / duraTime;
                 var progressValue = progressWidth * scale;
-                //显示进度时长和歌曲总时长
+                //显示进度条和歌曲总时长
                 _this.showTime(currTime, 1);
                 _this.showTime(duraTime, 2);
                 _this.progress.find("div.progress").width(progressValue + "px");
