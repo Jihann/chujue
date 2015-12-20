@@ -39,7 +39,7 @@
         this.musicAudio = this.audio.get(0); // 音频元素
 
         _this.musicAudio.volume = _this.settings.volume;
-        _this.init(_this.settings.defaultIndex);
+        _this.init(_this.settings.defaultIndex);//初始换播放器配置
 
         this.btnPlay.click(function() {
             if (_this.musicAudio.paused) {
