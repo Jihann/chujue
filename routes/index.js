@@ -34,7 +34,7 @@ router.post('/mod/head', User.saveHead, User.headMod);
 router.get('/user/:id', Home.info);
 router.get('/detail/:id', Home.detail);
 
-// admin
+// admin 后台管理
 router.get('/admin', Auth.adminRequired, admin.index);
 router.get('/index1', Home.index1);
 router.get('/index2', Home.index2);
@@ -42,7 +42,7 @@ router.get('/index3', Home.index3);
 router.get('/admin/login', admin.login);
 router.get('/admin/register', admin.register);
 
-// 锁定
+// 用户会话锁定
 router.get('/lockscreen', admin.lockscreen);
 router.post('/lockscreen', admin.loginAgain);
 
@@ -53,7 +53,7 @@ router.get('/biao1', Home.biao1);
 router.get('/biao2', Home.biao2);
 router.get('/biao3', Home.biao3);
 
-// photo
+// 相册管理
 router.get('/xiang1', Home.xiang1);
 router.get('/xiang2', Home.xiang2);
 router.get('/xiang3', Home.xiang3);
